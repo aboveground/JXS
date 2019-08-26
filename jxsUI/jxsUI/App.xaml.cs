@@ -13,5 +13,19 @@ namespace jxsUI
     /// </summary>
     public partial class App : Application
     {
+        private JxsUiMain main;
+        void App_Startup(object sender, StartupEventArgs e)
+        {
+            try
+            {
+                main = new JxsUiMain();
+                main.ShowMainWindow().Show();
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+
     }
 }

@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace jxsUI
+namespace jxsUI.SupportClasses
 {
-  public  class JxsMain
+  public  class ErrorEventArgs:EventArgs
     {
-
-        private MainWindow mainWindow;
-
     }
 }

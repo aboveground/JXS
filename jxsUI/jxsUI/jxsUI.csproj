@@ -64,8 +64,10 @@
     <Compile Include="ExtendedDefinitions\ScrollViewerExtensions.cs" />
     <Compile Include="ExtendedDefinitions\TextBoxDigitsOnly.cs" />
     <Compile Include="ExtendedDefinitions\ValidationRules.cs" />
-    <Compile Include="JxsMain.cs" />
+    <Compile Include="JxsUiMain.cs" />
+    <Compile Include="SupportClasses\ErrorEventArgs.cs" />
     <Compile Include="SupportClasses\RelayCommand.cs" />
+    <Compile Include="UISupport.cs" />
     <Compile Include="UserControls\ucTabHeaderCloser.xaml.cs">
       <DependentUpon>ucTabHeaderCloser.xaml</DependentUpon>
     </Compile>
@@ -73,8 +75,8 @@
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseVM.cs" />
-    <Compile Include="ViewModels\mainWindowVM.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -82,7 +84,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
