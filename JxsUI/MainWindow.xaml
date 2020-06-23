@@ -12,27 +12,47 @@
             <RowDefinition Height="22"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid >
-        <Menu  >
+
+
+        <Grid  x:Name="MenuGrid">
+            <Menu  >
                 <MenuItem Header="File" VerticalAlignment="Center">
                     <MenuItem Header="Exit"/>
                 </MenuItem>
                 <MenuItem Header="View">
                     <MenuItem Header="Work Bench"/>
                 </MenuItem>
+                <MenuItem Header="Customer">
+                    <MenuItem Header="Maintenance" Command="{Binding CustomerMaintenance}" />
+                </MenuItem>
                 <MenuItem Header="Help">
                     <MenuItem Header="About"/>
                 </MenuItem>
             </Menu>
-            
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="4"/>
-                <extended:RowDefinitionExtended x:Name="WorkBenchRow" Height="{Binding WorkBenchSplitDistance, Mode=TwoWay}"/>
-            </Grid.RowDefinitions>
-            <GridSplitter Grid.Row="1" Background="#FF928C8C" ResizeDirection="Rows" HorizontalAlignment="Stretch"/>
+
+        </Grid >
+        <Grid Grid.Row="1"  x:Name="MainContent">
+            <Grid.ColumnDefinitions>
+                <extended:ColumnDefinitionExtended x:Name="ToolBoxColumn" Width="{Binding ToolBoxSplitDistance, Mode=TwoWay}"/>
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+                <GridSplitter Grid.Column="1"  Grid.Row="1" Background="Blue" ResizeDirection="Columns"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <Grid  x:Name="RightWorkArea" Grid.Row="1" Grid.Column="2" Background="Gray">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="4"/>
+                    <extended:RowDefinitionExtended x:Name="WorkBenchRow" Height="{Binding WorkBenchSplitDistance, Mode=TwoWay}"/>
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Row="1" Background="#FF928C8C" ResizeDirection="Rows" HorizontalAlignment="Stretch"/>
+                <Grid x:Name="TabArea" Background="Yellow" Margin="10">
+
+                </Grid>
+                <Grid x:Name="MessageArea" Background="White" Grid.Row="2" Margin="10"/>
+            </Grid>
+            <Grid x:Name="LeftworkArea" Background="Red"  Margin="10">
+
+            </Grid>
         </Grid>
     </Grid>
 </Window>

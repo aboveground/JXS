@@ -11,14 +11,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JxsUI.UIControl
+namespace JxsUI.UIControl.Common
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for Address.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class AddressEdit : UserControl
     {
-        public UserControl1()
+        public AddressEdit()
         {
             InitializeComponent();
         }

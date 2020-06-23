@@ -94,5 +94,17 @@ namespace JxsUI {
                 this["WorkBenchSplitDistance"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("75")]
+        public double ToolBoxSplitDistance {
+            get {
+                return ((double)(this["ToolBoxSplitDistance"]));
+            }
+            set {
+                this["ToolBoxSplitDistance"] = value;
+            }
+        }
     }
 }

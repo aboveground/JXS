@@ -13,6 +13,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>JxsSettings.settings</DependentUpon>
     </Compile>
+    <Compile Update="UIControl\Common\Address.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +27,12 @@
 
   <ItemGroup>
     <Folder Include="WinformControl\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="UIControl\Common\Address.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

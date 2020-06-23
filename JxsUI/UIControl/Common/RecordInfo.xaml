@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="JxsUI.UIControl.Common.RecordInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JxsUI.UIControl.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="200" Style="{StaticResource LightTheme}">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding ID}" VerticalAlignment="Center" Margin="3"/>
+        <Label Content="{Binding DateIn}" Grid.Column="1" VerticalAlignment="Center" Margin="3"/>
+        <Label Content="{Binding ChangeDate}" Grid.Column="2" VerticalAlignment="Center" Margin="3"/>
+        <Label Content="{Binding RecStatus}" Grid.Column="3" VerticalAlignment="Center" Margin="3"/>
+    </Grid>
+</UserControl>

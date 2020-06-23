@@ -39,6 +39,12 @@ namespace JxsUI.ViewModel
             set { workBenchSplitDistance = value; NotifyPropertyChanged(); }
         }
 
+        private System.Windows.GridLength toolBoxSplitDistance;
+        public System.Windows.GridLength ToolBoxSplitDistance
+        {
+            get { return toolBoxSplitDistance; }
+            set { toolBoxSplitDistance = value; NotifyPropertyChanged(); }
+        }
 
         public MainWindowVM()
         {
@@ -47,6 +53,7 @@ namespace JxsUI.ViewModel
             width = JxsSettings.Default.Width;
             height = JxsSettings.Default.Height;
             workBenchSplitDistance = new System.Windows.GridLength(JxsSettings.Default.WorkBenchSplitDistance);
+            toolBoxSplitDistance = new System.Windows.GridLength(JxsSettings.Default.ToolBoxSplitDistance);
         }
     }
 }

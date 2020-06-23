@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace JxsUI
 {
@@ -17,12 +18,12 @@ namespace JxsUI
 
         }
 
-        public MainWindow GetMainWindow()
+        public Window GetMainWindow()
         {
             mainWindowVM = new MainWindowVM();
             mainWindow = new MainWindow(mainWindowVM);
             mainWindow.Closing += MainWindow_Closing;
-            return mainWindow;
+            return new Windows.Test1(); ;
 
         }
 
@@ -40,6 +41,7 @@ namespace JxsUI
                 JxsSettings.Default.Width = mainWindowVM.Width;
                 JxsSettings.Default.Height = mainWindowVM.Height;
                 JxsSettings.Default.WorkBenchSplitDistance = mainWindowVM.WorkBenchSplitDistance.Value;
+                JxsSettings.Default.ToolBoxSplitDistance = mainWindowVM.ToolBoxSplitDistance.Value;
             }
             JxsSettings.Default.Save();
         }

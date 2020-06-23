@@ -4,6 +4,26 @@
              xmlns:local="clr-namespace:JxsUI"
              Startup="ApplocationStart">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\ResourceDictionaries\Dictionary1.xaml "/>
+                <ResourceDictionary Source="\ResourceDictionaries\Dictionary2.xaml "/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        <!--<Style x:Key="LightTheme"  TargetType="UserControl">
+            <Setter Property="Background"  Value="White"/>
+        </Style>
+        <Style x:Key="CommonLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="CommonTextboxl" TargetType="TextBox">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
         <Style x:Key="BaseFlatButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Background" Value="#ffffff"/>
@@ -48,6 +68,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
     </Application.Resources>
 </Application>
