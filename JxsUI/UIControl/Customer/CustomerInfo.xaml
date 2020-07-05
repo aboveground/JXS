@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:JxsUI.UIControl.Customer"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="400"  Style="{StaticResource   DarkTheme}" >
+             d:DesignHeight="300" d:DesignWidth="400"  Background="White"  Margin="3">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

@@ -23,5 +23,11 @@
     <Setting Name="ToolBoxSplitDistance" Type="System.Double" Scope="User">
       <Value Profile="(Default)">75</Value>
     </Setting>
+    <Setting Name="ShowMessageArea" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowWorkBench" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

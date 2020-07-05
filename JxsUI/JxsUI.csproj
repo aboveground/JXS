@@ -8,6 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Windows\Test1.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="ResourceDictionaries\MenuResource.xaml" />
+    <Page Remove="Windows\Test1.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="JxsSettings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>

@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="JxsUI.UIControl.MainWorkArea"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                     xmlns:extended="clr-namespace:JxsUI.ExtendedDefinitions"
+             xmlns:local="clr-namespace:JxsUI.UIControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources >
+        <Style x:Key="MainMenu" TargetType="Menu">
+            <Setter Property="Background" Value="{StaticResource MainMenuLightBackColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource MainMenuLightForeColor}"/>
+            <Setter Property="Height" Value="27"/>
+        </Style>
+        <Style x:Key="MainMenuItem" TargetType="MenuItem">
+            <Setter Property="Background" Value="{StaticResource MainMenuItemLightBackColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource MainMenuItemLightForeColor}"/>
+            <Setter Property="Height" Value="27"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Grid  x:Name="MenuGrid">
+            <Menu Background="#FFE3E3E3"  >
+                <MenuItem Header="File" VerticalAlignment="Center" Style="{StaticResource MainMenuItem }">
+                    <MenuItem Header="Open"  Command="{Binding Open}" Style="{StaticResource MainMenuItem }"/>
+                    <MenuItem Header="Save" Command="{Binding Save}" Style="{StaticResource MainMenuItem }"/>
+                    <MenuItem Header="Save As"  Command="{Binding SaveAs}" Style="{StaticResource MainMenuItem }"/>
+                    <MenuItem Header="Print" Command="{Binding Print}"  Style="{StaticResource MainMenuItem }"/>
+                    <MenuItem Header="Exit" Command="{Binding Exit}"  Style="{StaticResource MainMenuItem }"/>
+                </MenuItem>
+                <MenuItem Header="View"  Style="{StaticResource MainMenuItem }">
+                    <MenuItem Header="Work Bench" IsCheckable="True" IsChecked="{Binding ShowWorkBench}"  Command="{Binding WorkBenchShow}"  Style="{StaticResource MainMenuItem }"/>
+                    <MenuItem Header="Message Area" IsChecked="{Binding ShowMessageArea}" IsCheckable="True" Command="{Binding MessageAreaShow}"  Style="{StaticResource MainMenuItem }"/>
+                </MenuItem>
+                <MenuItem Header="Customer"  Style="{StaticResource MainMenuItem }">
+                    <MenuItem Header="Maintenance" Command="{Binding CustomerMaintenance}"  Style="{StaticResource MainMenuItem }"     />
+                </MenuItem>
+                <MenuItem Header="Help"  Style="{StaticResource MainMenuItem }">
+                    <MenuItem Header="About"  Style="{StaticResource MainMenuItem }"/>
+                </MenuItem>
+            </Menu>
+        </Grid >
+        
+        <Grid Grid.Row="1"  x:Name="MainContent">
+            <Grid.ColumnDefinitions>
+                <extended:ColumnDefinitionExtended x:Name="ToolBoxColumn" Width="{Binding ToolBoxSplitDistance, Mode=TwoWay}" Visible="{Binding ShowWorkBench}"/>
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Grid.Column="1"  Grid.Row="1" Background="{StaticResource MainSplitterBackColorLight}" ResizeDirection="Columns"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <Grid  x:Name="RightWorkArea" Grid.Row="1" Grid.Column="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="4"/>
+                    <extended:RowDefinitionExtended x:Name="WorkBenchRow" Height="{Binding WorkBenchSplitDistance, Mode=TwoWay}" Visible="{Binding ShowMessageArea}"/>
+                </Grid.RowDefinitions>
+                <GridSplitter Grid.Row="1" Background="{StaticResource MainSplitterBackColorLight}" ResizeDirection="Rows" HorizontalAlignment="Stretch"/>
+                <Grid x:Name="TabArea" Background="{StaticResource MainContentBackColorLight}" Margin="3">
+
+                </Grid>
+                <Grid x:Name="MessageArea" Background="{StaticResource MainMessageAreaBackColorLight}" Grid.Row="2" Margin="3"/>
+            </Grid>
+            <Grid x:Name="LeftworkArea" Background="{StaticResource MainWorkBenchBackColorLight }"  Margin="3">
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

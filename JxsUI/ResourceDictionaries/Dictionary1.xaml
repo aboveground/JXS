@@ -1,7 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                    >
-    
+    <SolidColorBrush x:Key="MainMenuItemLightBackColor" Color="#FFE3E3E3"/>
+    <SolidColorBrush x:Key="MainMenuItemLightForeColor" Color="Black"/>
+    <SolidColorBrush x:Key="MainMenuLightBackColor" Color="#FFE3E3E3"/>
+    <SolidColorBrush x:Key="MainMenuLightForeColor" Color="#FFE3E3E3"/>
+    <SolidColorBrush x:Key="MainWorkBenchBackColorLight" Color="White"/>
+    <SolidColorBrush x:Key="MainMessageAreaBackColorLight" Color="White"/>
+    <SolidColorBrush x:Key="MainContentBackColorLight" Color="White"/>
+    <SolidColorBrush x:Key="MainSplitterBackColorLight" Color="LightGray"/>
+
+
     <SolidColorBrush x:Key="WindowBackGroundNormal" Color="#FF094256" />
     <SolidColorBrush x:Key="WindowBorderBrush" Color="#FF030FCC"/>
     <SolidColorBrush x:Key="WindowenuBackGroundNormal" Color="#FF05232E" />
@@ -9,6 +18,7 @@
     <SolidColorBrush x:Key="ButtonForeGroundNormal" Color="LightGray" />
     <SolidColorBrush x:Key="ButtonBackGroundMouseIn" Color="LightYellow" />
     <SolidColorBrush x:Key="ButtonForegroundMouseIn" Color="Black" />
+    
     <Style x:Key="xWindow" TargetType="Window">
         <Style.Setters>
             <Setter Property="Background" Value="{StaticResource WindowBackGroundNormal}"/>
@@ -17,23 +27,7 @@
             <Setter Property="BorderThickness" Value="1"/>
         </Style.Setters>
     </Style>
-    <Style x:Key="xMenu" TargetType="Menu">
-        <Style.Setters>
-            <Setter Property="Background" Value="{StaticResource WindowenuBackGroundNormal}"/>
-            <Setter Property="Foreground" Value="#FFA6A17E"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="Height" Value="29"/>
-        </Style.Setters>
-    </Style>
-    <Style x:Key="xMenuItem" TargetType="MenuItem">
-        <Style.Setters>
-            <Setter Property="Background" Value="{StaticResource WindowenuBackGroundNormal}"/>
-            <Setter Property="Foreground" Value="#FFA6A17E"/>
-            <Setter Property="VerticalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <!--<Setter Property="Height" Value="29"/>-->
-        </Style.Setters>
-    </Style>
+
 
     <Style x:Key="txtbox2" TargetType="TextBox">
         <Setter Property="Template">
@@ -118,7 +112,7 @@
         <Style.Setters>
 
             <Setter Property="Background" Value="{StaticResource ButtonBackGroundNormal}"/>
-           
+
         </Style.Setters>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
@@ -140,20 +134,43 @@
         <Grid>
             <!--<Border x:Name="xBorder" Style="{StaticResource xBorder}" >
             </Border>-->
-                <Label Style="{StaticResource xLabel}" >
-                    
-                </Label>
-                <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        </Grid>
+            <Label Style="{StaticResource xLabel}" >
 
-        <!--<ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="Yellow" TargetName="xBorder"/>
-            </Trigger>
-        </ControlTemplate.Triggers>-->
+            </Label>
+            <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
     </ControlTemplate>
 
-   
+
+
+
+    <Style x:Key="xMenu" TargetType="Menu">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource WindowenuBackGroundNormal}"/>
+            <Setter Property="Foreground" Value="#FFA6A17E"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="29"/>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="xMenuItem" TargetType="MenuItem">
+        <Style.Setters>
+            <Setter Property="Background" Value="{StaticResource WindowenuBackGroundNormal}"/>
+            <Setter Property="Foreground" Value="LightBlue"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="29"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Blue"/>
+                <Setter Property="Background" Value="Blue"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 
 </ResourceDictionary>

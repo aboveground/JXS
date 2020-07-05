@@ -1,9 +1,6 @@
-﻿using JxsUI.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,16 +11,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JxsUI
+namespace JxsUI.UIControl.Customer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CustomerMain.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CustomerMain : UserControl
     {
-        public MainWindow(MainWindowVM vm)
+        public CustomerMain()
         {
-            DataContext = vm;
             InitializeComponent();
         }
     }

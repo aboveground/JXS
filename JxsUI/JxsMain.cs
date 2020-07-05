@@ -1,4 +1,5 @@
-﻿using JxsUI.ViewModel;
+﻿using JxsUI.UIControl;
+using JxsUI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,11 +7,11 @@ using System.Windows;
 
 namespace JxsUI
 {
- public   class JxsMain
+    public class JxsMain
     {
 
         private MainWindow mainWindow;
-        private MainWindowVM mainWindowVM;
+        private MainAreaVM mainAreaVM;
 
 
         public JxsMain()
@@ -20,11 +21,9 @@ namespace JxsUI
 
         public Window GetMainWindow()
         {
-            mainWindowVM = new MainWindowVM();
-            mainWindow = new MainWindow(mainWindowVM);
+            mainWindow = new MainWindow(new MainWorkArea(SetupMainErrorVM()));
             mainWindow.Closing += MainWindow_Closing;
-            return new Windows.Test1(); ;
-
+            return mainWindow;
         }
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -34,21 +33,56 @@ namespace JxsUI
 
         private void CloseApp()
         {
-            if (mainWindowVM != null)
+            if (mainAreaVM != null)
             {
-                JxsSettings.Default.Top = mainWindowVM.Top;
-                JxsSettings.Default.Left = mainWindowVM.Left;
-                JxsSettings.Default.Width = mainWindowVM.Width;
-                JxsSettings.Default.Height = mainWindowVM.Height;
-                JxsSettings.Default.WorkBenchSplitDistance = mainWindowVM.WorkBenchSplitDistance.Value;
-                JxsSettings.Default.ToolBoxSplitDistance = mainWindowVM.ToolBoxSplitDistance.Value;
+                JxsSettings.Default.Top = mainAreaVM.Top;
+                JxsSettings.Default.Left = mainAreaVM.Left;
+                JxsSettings.Default.Width = mainAreaVM.Width;
+                JxsSettings.Default.Height = mainAreaVM.Height;
+                JxsSettings.Default.WorkBenchSplitDistance = mainAreaVM.WorkBenchSplitDistance.Value;
+                JxsSettings.Default.ToolBoxSplitDistance = mainAreaVM.ToolBoxSplitDistance.Value;
+                JxsSettings.Default.ShowMessageArea = mainAreaVM.ShowMessageArea;
+                JxsSettings.Default.ShowWorkBench = mainAreaVM.ShowWorkBench;
             }
             JxsSettings.Default.Save();
         }
 
-        private void test()
+        private MainAreaVM SetupMainErrorVM()
         {
-           // System.Windows.Forms f;
+            mainAreaVM = new MainAreaVM();
+            mainAreaVM.SetDelegates(OnOpen, OnSave, OnSaveAs, OnExit, OnPrint);
+            return mainAreaVM;
+
         }
+
+        private void OnCustomermain(object sensder, EventArgs e)
+        {
+
+        }
+
+        private void OnSave(object sensder, EventArgs e)
+        {
+
+        }
+        private void OnSaveAs(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnPrint(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnOpen(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnExit(object sender, EventArgs e)
+        {
+            mainWindow.Close();
+        }
+
     }
 }

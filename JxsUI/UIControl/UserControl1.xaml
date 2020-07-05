@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="JxsUI.UIControl.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JxsUI.UIControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="55" d:DesignWidth="100">
+    <UserControl.Resources>
+        
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Label Content="Text" FontWeight="ExtraBold" FontSize="22" VerticalAlignment="Stretch" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0,.5" StartPoint="1,.5">
+                    <GradientStop Color="Blue" Offset="{Binding Progress}"/>
+                    <GradientStop Color="White" Offset="{Binding Progress}"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0,.5" StartPoint="1,.5">
+                    <GradientStop Color="White" Offset="{Binding Progress}"/>
+                    <GradientStop Color="Blue" Offset="{Binding Progress}"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+
+    </Grid>
+</UserControl>

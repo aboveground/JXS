@@ -106,5 +106,29 @@ namespace JxsUI {
                 this["ToolBoxSplitDistance"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowMessageArea {
+            get {
+                return ((bool)(this["ShowMessageArea"]));
+            }
+            set {
+                this["ShowMessageArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowWorkBench {
+            get {
+                return ((bool)(this["ShowWorkBench"]));
+            }
+            set {
+                this["ShowWorkBench"] = value;
+            }
+        }
     }
 }
