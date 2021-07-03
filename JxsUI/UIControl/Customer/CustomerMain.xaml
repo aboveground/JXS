@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:JxsUI.UIControl.Customer"
+                 xmlns:common="clr-namespace:JxsUI.UIControl.Common"
+             xmlns:VM="clr-namespace:JxsUI.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background=" White">
     <Grid>
@@ -16,5 +18,15 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
             <local:CustomerInfo />
+        <Grid Grid.Column="1" Grid.RowSpan="2" Background="#FFF0F0F0" >
+            <ListBox ItemsSource="{Binding Addresses}" SelectedItem="{Binding SelectedAddress}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ScrollViewer.CanContentScroll="False">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type VM:AddressVM}">
+                        <common:Address/>
+                    </DataTemplate>
+                    
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
     </Grid>
 </UserControl>

@@ -24,5 +24,7 @@ namespace JxsUI.UIControl
             DataContext = vm;
             InitializeComponent();
         }
+
+
     }
 }

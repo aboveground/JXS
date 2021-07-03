@@ -1,9 +1,11 @@
 ﻿using JxsUI.UIControl;
+using JxsUI.UIControl.Customer;
 using JxsUI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace JxsUI
 {
@@ -21,8 +23,9 @@ namespace JxsUI
 
         public Window GetMainWindow()
         {
-            mainWindow = new MainWindow(new MainWorkArea(SetupMainErrorVM()));
+            mainWindow = new MainWindow(new MainWorkArea(SetupMainAreaVM()));
             mainWindow.Closing += MainWindow_Closing;
+            
             return mainWindow;
         }
 
@@ -47,12 +50,22 @@ namespace JxsUI
             JxsSettings.Default.Save();
         }
 
-        private MainAreaVM SetupMainErrorVM()
+        private MainAreaVM SetupMainAreaVM()
         {
             mainAreaVM = new MainAreaVM();
-            mainAreaVM.SetDelegates(OnOpen, OnSave, OnSaveAs, OnExit, OnPrint);
+            mainAreaVM.SetDelegates(OnOpen, OnSave, OnSaveAs, OnExit, OnPrint, test);
             return mainAreaVM;
 
+        }
+
+        private void test(object sender, EventArgs e)
+        {
+            Customer c = new Customer();
+            CustomerMain cm = new CustomerMain(c);
+            TabItem t = new TabItem();
+            t.Content = cm;
+            mainAreaVM.AddToRightArea(t);
+          //  mainWindow.A
         }
 
         private void OnCustomermain(object sensder, EventArgs e)

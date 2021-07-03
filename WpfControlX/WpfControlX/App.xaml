@@ -1,0 +1,18 @@
+﻿<Application x:Class="WpfControlX.App"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="clr-namespace:WpfControlX"
+			 xmlns:extended="clr-namespace:WpfControlX.ExtendedDefinitions"
+			 xmlns:clr="clr-namespace:System;assembly=mscorlib"
+			 Startup="Application_Startup">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionaries/Colors.xaml" />
+                <ResourceDictionary Source="Dictionaries/Menus.xaml" />
+				<ResourceDictionary Source="Dictionaries/Windows.xaml" />
+				<ResourceDictionary Source="Dictionaries/Buttons.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

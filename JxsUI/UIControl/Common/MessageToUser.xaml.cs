@@ -11,21 +11,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace JxsUI.UIControl.Customer
+namespace JxsUI.UIControl.Common
 {
     /// <summary>
-    /// Interaction logic for CustomerMain.xaml
+    /// Interaction logic for MessageToUser.xaml
     /// </summary>
-    public partial class CustomerMain : UserControl
+    public partial class MessageToUser : UserControl
     {
-        public CustomerMain()
+        public MessageToUser()
         {
-            InitializeComponent();
-        }
-        public CustomerMain(ViewModel.Customer c)
-        {
-            DataContext = c;
             InitializeComponent();
         }
     }

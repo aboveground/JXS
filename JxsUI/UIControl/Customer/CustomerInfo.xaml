@@ -22,18 +22,18 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Name / Code" Margin="3" VerticalAlignment="Center" Grid.Row="0"/>
-        <TextBox Text="{Binding Name}" Margin="3" Grid.Row="0" Grid.Column="1"/>
-        <TextBox Text="{Binding Code}" Style="{StaticResource  txtbox2}" Margin="3" Grid.Row="0" Grid.Column="2"/>
-        <Label Content="Tax ID" Margin="3" VerticalAlignment="Center" Grid.Row="1"/>
-        <TextBox Text="{Binding TaxID}" Margin="3" Grid.Row="1" Grid.Column="1"/>
-        <Label Content="DUNS" Margin="3" VerticalAlignment="Center" Grid.Row="2"/>
-        <TextBox Text="{Binding Duns}" Margin="3" Grid.Row="2" Grid.Column="1"/>
-        <Label Content="Type" Margin="3" VerticalAlignment="Center" Grid.Row="3"/>
-        <ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding Type}" Margin="3" Grid.Row="3" Grid.Column="1"/>
-        <Label Content="Credit Status" Margin="3" VerticalAlignment="Center" Grid.Row="4"/>
-        <ComboBox ItemsSource="{Binding CreditStatuses}"  SelectedItem="{Binding CreditStatus}" Margin="3" Grid.Row="4" Grid.Column="1"/>
-        <Label Content="Account Status" Margin="3" VerticalAlignment="Center" Grid.Row="5"/>
-        <ComboBox ItemsSource="{Binding Accountstatuses}" SelectedItem="{Binding AccoutStatus}" Margin="3" Grid.Row="5" Grid.Column="1"/>
+        <Label Content="Name / Code" Style="{StaticResource CommonLabel}" Grid.Row="0"/>
+        <TextBox Text="{Binding Name}" Style="{StaticResource CommonTextbox}"  Grid.Row="0" Grid.Column="1"/>
+        <TextBox Text="{Binding Code}" Style="{StaticResource  CommonTextbox}" Grid.Row="0" Grid.Column="2"/>
+        <Label Content="Tax ID" Style="{StaticResource CommonLabel}" Grid.Row="1"/>
+        <TextBox Text="{Binding TaxId}" Style="{StaticResource  CommonTextbox}" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="DUNS" Style="{StaticResource CommonLabel}" Grid.Row="2"/>
+        <TextBox Text="{Binding Duns}" Style="{StaticResource  CommonTextbox}" Grid.Row="2" Grid.Column="1"/>
+        <Label Content="Type" Style="{StaticResource CommonLabel}"  Grid.Row="3"/>
+        <ComboBox ItemsSource="{Binding Types}" SelectedItem="{Binding Type}" Style="{StaticResource  CommonComboBox}" Grid.Row="3" Grid.Column="1"/>
+        <Label Content="Credit Status" Style="{StaticResource CommonLabel}" Grid.Row="4"/>
+        <ComboBox ItemsSource="{Binding CreditStatuses}"  SelectedItem="{Binding CreditStatus}" Style="{StaticResource CommonComboBox}" Grid.Row="4" Grid.Column="1"/>
+        <Label Content="Account Status" Style="{StaticResource CommonLabel}" Grid.Row="5"/>
+        <ComboBox ItemsSource="{Binding Accountstatuses}" SelectedItem="{Binding AccoutStatus}" Style="{StaticResource CommonComboBox}" Grid.Row="5" Grid.Column="1"/>
     </Grid>
 </UserControl>

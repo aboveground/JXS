@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,22 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace JxsUI.UIControl.Customer
+namespace WpfControlX
 {
     /// <summary>
-    /// Interaction logic for CustomerMain.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class CustomerMain : UserControl
+    public partial class MainWindow : Window
     {
-        public CustomerMain()
+        public MainWindow()
         {
             InitializeComponent();
-        }
-        public CustomerMain(ViewModel.Customer c)
-        {
-            DataContext = c;
-            InitializeComponent();
+            this.Resources.Add("test", new SolidColorBrush());
         }
     }
 }

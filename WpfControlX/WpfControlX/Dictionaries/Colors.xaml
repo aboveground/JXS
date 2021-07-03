@@ -1,0 +1,29 @@
+﻿<!--<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MainClientArea" Color="#ff112233"/>
+    <SolidColorBrush x:Key="TopBarBackground" Color="#ff444444"/>
+    <SolidColorBrush x:Key="ControlButtonOverColor" Color="#ff777777"/>
+    <SolidColorBrush x:Key="ControlButtonForeground" Color="#ffdddd00"/>
+    <SolidColorBrush x:Key="ControlButtonBackground" Color="#ff555555"/>
+    <SolidColorBrush x:Key="ControlButtonPressed" Color="#ff777777"/>
+    <SolidColorBrush x:Key="StatusBarBackGround" Color="#ff6666ff"/>
+    <SolidColorBrush x:Key="StatusBarTextForeGround" Color="#ffffffff"/>
+    <SolidColorBrush x:Key="MainWindowBorderColor" Color="#ff0000ff"/>
+    <SolidColorBrush x:Key="MenuForeGround" Color="#ffffff00"/>
+    <SolidColorBrush x:Key="MenuItemForeground" Color="#ffffffff"/>
+</ResourceDictionary>-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MainClientArea" Color="{DynamicResource xMainClientArea}"/>
+    <SolidColorBrush x:Key="TopBarBackground" Color="{DynamicResource xTopbarBackground}"/>
+    <SolidColorBrush x:Key="ControlButtonOverColor" Color="{DynamicResource xControlButtonOver}"/>
+    <SolidColorBrush x:Key="ControlButtonForeground" Color="{DynamicResource xControlButtonForeground}"/>
+    <SolidColorBrush x:Key="ControlButtonBackground" Color="{DynamicResource xControlButtonBackground}"/>
+    <SolidColorBrush x:Key="ControlButtonPressed" Color="{DynamicResource xControlButtonPressed}"/>
+    <SolidColorBrush x:Key="StatusBarBackGround" Color="{DynamicResource xStatusBarBackGround}"/>
+    <SolidColorBrush x:Key="StatusBarTextForeGround" Color="{DynamicResource xStatusBarTextForeground}"/>
+    <SolidColorBrush x:Key="MainWindowBorderColor" Color="{DynamicResource xMainWindowBorderColor}"/>
+    <SolidColorBrush x:Key="MenuForeGround" Color="{DynamicResource xMenuForeground}"/>
+    <SolidColorBrush x:Key="MenuItemForeground" Color="{DynamicResource xMenuItemForeground}"/>
+</ResourceDictionary>

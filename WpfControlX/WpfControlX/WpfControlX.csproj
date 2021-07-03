@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\AppIcon.ico" />
+    <None Remove="Images\CloseControl.png" />
+    <None Remove="Images\Minimize.png" />
+    <None Remove="Images\Restore.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\AppIcon.ico" />
+    <Resource Include="Images\CloseControl.png" />
+    <Resource Include="Images\Minimize.png" />
+    <Resource Include="Images\Restore.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="XControls.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>XControls.Settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="XControls.Settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>XControls.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

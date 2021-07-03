@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace JxsUI.ViewModel
@@ -13,6 +15,15 @@ namespace JxsUI.ViewModel
         private EventHandler SaveAsHandler;
         private EventHandler ExitHandler;
         private EventHandler PrintHandler;
+        private EventHandler CustomerHandler;
+
+        private ObservableCollection<TabItem> rightAreaItems;
+        public ObservableCollection<TabItem> RightAreaItems {
+            get { return rightAreaItems; } 
+            set { rightAreaItems = value;NotifyPropertyChanged(); } }
+
+        private TabItem selectedRightTab;
+        public TabItem SelectedRightTab { get { return selectedRightTab; } set { selectedRightTab = value; NotifyPropertyChanged(); } }
 
         private double top;
         public double Top
@@ -95,16 +106,19 @@ namespace JxsUI.ViewModel
             toolBoxSplitDistance = new System.Windows.GridLength(JxsSettings.Default.ToolBoxSplitDistance);
             showWorkBench = JxsSettings.Default.ShowWorkBench;
             showMessageArea = JxsSettings.Default.ShowMessageArea;
+            RightAreaItems = new ObservableCollection<TabItem>();
             SetupRelays();
         }
 
-        internal void SetDelegates(EventHandler openHandler, EventHandler saveHandler, EventHandler saveAsHandler, EventHandler exitHandler, EventHandler printHandler)
+        internal void SetDelegates(EventHandler openHandler, EventHandler saveHandler, EventHandler saveAsHandler, 
+            EventHandler exitHandler, EventHandler printHandler, EventHandler customer)
         {
             OpenHandler = openHandler;
             SaveAsHandler = saveAsHandler;
             SaveHandler = saveHandler;
             ExitHandler = exitHandler;
             PrintHandler = printHandler;
+            CustomerHandler = customer;
         }
 
         private void SetupRelays()
@@ -114,6 +128,18 @@ namespace JxsUI.ViewModel
             saveAs = new RelayCommand(ExecuteSaveAs, CanExecuteSaveAs);
             exit = new RelayCommand(ExecuteExit, CanExecuteExit);
             print = new RelayCommand(ExecutePrint, CanExecutePrint);
+            customerMaintenance = new RelayCommand(ExecuteCustomer, CanExecuteCustomer);
+
+        }
+
+        private bool CanExecuteCustomer(object parameter)
+        {
+            return true;
+        }
+
+        private void ExecuteCustomer(object parameter)
+        {
+            CustomerHandler?.Invoke(this, EventArgs.Empty);
         }
 
         private bool CanExecutePrint(object parameter)
@@ -164,6 +190,12 @@ namespace JxsUI.ViewModel
         private void ExecuteOpen(object parameter)
         {
             OpenHandler?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void AddToRightArea(TabItem t)
+        {
+            RightAreaItems.Add(t);
+            SelectedRightTab = t;
         }
 
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,21 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace JxsUI.UIControl.Customer
+namespace WpfControlX.UIControls
 {
     /// <summary>
-    /// Interaction logic for CustomerMain.xaml
+    /// Interaction logic for ColorSettings.xaml
     /// </summary>
-    public partial class CustomerMain : UserControl
+    public partial class ColorSettings : UserControl
     {
-        public CustomerMain()
+        public ColorSettings()
         {
-            InitializeComponent();
-        }
-        public CustomerMain(ViewModel.Customer c)
-        {
-            DataContext = c;
             InitializeComponent();
         }
     }
